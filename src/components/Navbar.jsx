@@ -2,11 +2,21 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ selectedCategory, setSelectedCategory, selectedCountry, setSelectedCountry }) => {
+const Navbar = ({ selectedCategory, setSelectedCategory }) => {
   const { dark, setDark } = useContext(ThemeContext);
 
-  const categories = ["general", "business", "entertainment", "health", "science", "sports", "technology"];
-  const countries = ["us", "in", "gb", "au", "ca"];
+  // GNews accepted topics
+  const categories = [
+    "breaking-news",
+    "world",
+    "nation",
+    "business",
+    "technology",
+    "entertainment",
+    "sports",
+    "science",
+    "health"
+  ];
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-4 bg-white dark:bg-gray-900 dark:text-white shadow-md sticky top-0 z-10">
@@ -23,18 +33,6 @@ const Navbar = ({ selectedCategory, setSelectedCategory, selectedCountry, setSel
           {categories.map((cat) => (
             <option key={cat} value={cat}>
               {cat.toUpperCase()}
-            </option>
-          ))}
-        </select>
-
-        <select
-          value={selectedCountry}
-          onChange={(e) => setSelectedCountry(e.target.value)}
-          className="p-1 border rounded-md dark:bg-gray-700"
-        >
-          {countries.map((country) => (
-            <option key={country} value={country}>
-              {country.toUpperCase()}
             </option>
           ))}
         </select>

@@ -28,12 +28,10 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white transition-colors">
-      <Navbar
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-        selectedCountry={selectedCountry}
-        setSelectedCountry={setSelectedCountry}
-      />
+    <Navbar
+    selectedCategory={selectedCategory}
+    setSelectedCategory={setSelectedCategory}
+    />
 
       <div className="max-w-6xl mx-auto px-4 py-6">
         {loading ? (
